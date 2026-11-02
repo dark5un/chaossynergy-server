@@ -4,8 +4,8 @@
 
 Chaossynergy Server Edition is a fresh distro project — the successor and base-switch
 of [dark5un/chaossynergy](https://github.com/dark5un/chaossynergy) (the bootc/Bluefin
-prototype). It packages a proven production server build: an agent-native Arch
-appliance that
+prototype, now historical — no bootc/ostree in this product). It packages a proven
+production server build: an agent-native Arch appliance that
 installs **offline**, on **one disk** (Edition 1), and lands a full AI-lab quadlet
 stack that stays **dormant** until a post-install app probes the target hardware and
 finalizes it — generic GPU slots (`nvidia-gpu-0..N`), fresh per-install secrets, tier
@@ -25,9 +25,9 @@ deployment target.
 Planning — [docs/server-edition-plan.md](docs/server-edition-plan.md) (v0.4, merged
 from two expert reviews). No code yet; milestones M0-M5 in the plan.
 
-- `docs/adr/` — ADRs 001-012 inherited from Chaossynergy v1 (numbering continues;
-  ADR-013 = base decision + naming + licensing).
-- `docs/heritage-architecture-guide.md` — v1 architecture notes for reference.
+- `docs/adr/` — ADRs 001-012 are the historical v1 record (some describe the
+  superseded bootc/Bluefin prototype; they are kept only so numbering continues —
+  ADR-013 onward define THIS product). No bootc in the server design.
 
 ## Naming
 
