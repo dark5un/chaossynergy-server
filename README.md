@@ -1,10 +1,13 @@
-# Chaossynergy — Server Edition
+# Chaossynergy
 
-**The OS is the agent interface.** This time: as an appliance.
+**The OS is the agent interface.** This time: a server appliance.
 
-Chaossynergy Server Edition is a fresh distro project — the successor and base-switch
-of [dark5un/chaossynergy](https://github.com/dark5un/chaossynergy) (the bootc/Bluefin
-prototype, now historical — no bootc/ostree in this product). It packages a proven
+This repo builds **Chaossynergy** — the name carries forward from
+[dark5un/chaossynergy](https://github.com/dark5un/chaossynergy) (the bootc/Bluefin
+prototype, now historical). Like its name suggests it is chaos + synergy; as of
+Edition 1 it is **not an atomic OS** — plain Arch with appliance discipline and
+snapshot A/B rollback (snapper + Limine); atomicity is a live option for a later
+edition, not a present promise. It packages a proven
 production server build: an agent-native Arch appliance that
 installs **offline**, on **one disk** (Edition 1), and lands a full AI-lab quadlet
 stack that stays **dormant** until a post-install app probes the target hardware and

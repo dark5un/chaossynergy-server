@@ -1,4 +1,7 @@
-# Chaossynergy — Server Edition (working title)
+# Chaossynergy (repo: chaossynergy-server)
+The OS is called **Chaossynergy** — full stop (Panos, 2026-11-02). As of Edition 1 it
+is NOT atomic like the Bluefin-based v1 prototype: Arch base + snapper/limine snapshot
+A/B rollback; atomicity may be reconsidered for a later edition.
 Status: DRAFT v0.4 — both expert reviews merged; SCOPE per Panos: Edition 1 is
        SINGLE-DISK only; btrfs RAID1 deferred to Edition 2 (findings preserved in Annex A)
 Date: 2026-11-02
@@ -75,9 +78,12 @@ backend + Limine/snapper). Option B (rejected): stay bootc/ostree — stronger i
 but contradicts "based on this one" (reference box, offline story, shell layer all Arch).
 Honest sizing (review): even Edition 1 has SIX genuinely-new mechanisms — non-desktop
 contract, server variant gates, lab payload + dormancy mechanism, enablement app, offline
-OCI channel, server package closure. A port with real delta, not a re-skin. Immutability
-= snapper A/B + "services only as containers" policy; mutable-base boundary defined in
-the same ADR (what may ever be installed on the host).
+OCI channel, server package closure. A port with real delta, not a re-skin. Positioning
+(Panos, 2026-11-02): **not atomic as of Edition 1** — no immutability claim for now;
+atomicity stays an open option for later editions. Safety =
+snapshot A/B rollback (snapper + limine-snapper-sync) + "services only as containers"
+appliance discipline; the mutable-base boundary (what may ever be installed on the host)
+is defined in the same ADR.
 
 ## 3. Architecture (Edition 1 = single disk)
 - **L0 ISO**: archiso releng profile + new `server` variant (variant case in
@@ -172,6 +178,8 @@ M5 release pipeline + ISO publication + Philosophical Developer ch. 66 written d
 E2: Annex A (multi-disk RAID1) — scheduled when a >=2-disk target is chosen.
 
 ## 7. Open questions (need Panos)
+0. Later-edition stance on atomicity (bootc/ostree or A/B partition scheme) — parked,
+   not rejected; revisit after E1 proves the appliance model.
 1. Trial machine identity + specs (GPU model, RAM)? (name stays private)
 2. ~~Repo home & name~~ RESOLVED (Panos, 2026-11-02): fresh repo
    **github.com/dark5un/chaossynergy-server** (public); ADR numbering continues from v1
